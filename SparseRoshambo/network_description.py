@@ -1,0 +1,115 @@
+import tensorflow as tf
+
+activation = tf.nn.relu
+
+network_description = [
+    {"name": "layer1",
+     "type": "conv",
+     "filters": 16,
+     "kernel_size": (5, 5),
+     "strides": (1, 1),
+     "padding": "VALID",
+     "activation": activation,
+     "weights_num_bits": 8,
+     "biases_num_bits": 8,
+     "activations_num_bits": 16,
+     },
+
+    {"name": "pool_l1",
+     "type": "pool",
+     "strides": (2, 2),
+     "padding": "VALID",
+     "window_shape": (2, 2),
+     "pooling_type": "AVG"
+     },
+
+    {"name": "layer2",
+     "type": "conv",
+     "filters": 32,
+     "kernel_size": (3, 3),
+     "strides": (1, 1),
+     "padding": "VALID",
+     "activation": activation,
+     "weights_num_bits": 8,
+     "biases_num_bits": 8,
+     "activations_num_bits": 16,
+     },
+
+    {"name": "pool_l2",
+     "type": "pool",
+     "strides": (2, 2),
+     "padding": "VALID",
+     "window_shape": (2, 2),
+     "pooling_type": "AVG"
+     },
+
+    {"name": "layer3",
+     "type": "conv",
+     "filters": 64,
+     "kernel_size": (3, 3),
+     "strides": (1, 1),
+     "padding": "VALID",
+     "activation": activation,
+     "weights_num_bits": 8,
+     "biases_num_bits": 8,
+     "activations_num_bits": 16,
+     },
+
+    {"name": "pool_l3",
+     "type": "pool",
+     "strides": (2, 2),
+     "padding": "VALID",
+     "window_shape": (2, 2),
+     "pooling_type": "AVG"
+     },
+
+    {"name": "layer4",
+     "type": "conv",
+     "filters": 128,
+     "kernel_size": (3, 3),
+     "strides": (1, 1),
+     "padding": "VALID",
+     "activation": activation,
+     "weights_num_bits": 8,
+     "biases_num_bits": 8,
+     "activations_num_bits": 16,
+
+     },
+    {"name": "pool_l4",
+     "type": "pool",
+     "strides": (2, 2),
+     "padding": "VALID",
+     "window_shape": (2, 2),
+     "pooling_type": "AVG"
+     },
+
+    {"name": "layer5",
+     "type": "conv",
+     "filters": 128,
+     "kernel_size": (1, 1),
+     "strides": (1, 1),
+     "padding": "VALID",
+     "activation": activation,
+     "weights_num_bits": 8,
+     "biases_num_bits": 8,
+     "activations_num_bits": 16,
+     },
+
+    {"name": "pool_l5",
+     "type": "pool",
+     "strides": (2, 2),
+     "padding": "VALID",
+     "window_shape": (2, 2),
+     "pooling_type": "AVG"
+     },
+
+    {"name": "layer6",
+     "type": "FC",
+     "filters": 4,
+     "activation": None,
+     "weights_num_bits": 8,
+     "biases_num_bits": 8,
+     "activations_num_bits": 16,
+     },
+
+]
